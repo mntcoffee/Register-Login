@@ -11,7 +11,7 @@ import com.example.stakasaki.coffeeorder.R
  * Activity for register and login
  */
 
-class RegisterLoginActivity : AppCompatActivity(R.layout.activity_main) {
+class RegisterLoginActivity : AppCompatActivity(R.layout.activity_register_login) {
 
     private lateinit var navController: NavController
 
