@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.stakasaki.coffeeorder.R
 import com.example.stakasaki.coffeeorder.databinding.FragmentLoginBinding
-import com.example.stakasaki.coffeeorder.model.RegisterLoginViewModel
 
 /**
  * [LoginFragment] allows a user to login
@@ -49,6 +48,7 @@ class LoginFragment : Fragment() {
     fun onClickLoginButton() {
         Log.d(TAG, "clicked a login button")
         /**
+         * TODO
          * login check method implemented in RegisterLoginViewModel
          * if(user is ok) -> main activity
          */

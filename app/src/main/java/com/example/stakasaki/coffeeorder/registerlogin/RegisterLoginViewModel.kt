@@ -1,4 +1,4 @@
-package com.example.stakasaki.coffeeorder.model
+package com.example.stakasaki.coffeeorder.registerlogin
 
 import androidx.lifecycle.ViewModel
 

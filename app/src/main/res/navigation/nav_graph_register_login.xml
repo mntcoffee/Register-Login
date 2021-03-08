@@ -14,5 +14,5 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.stakasaki.coffeeorder.registerlogin.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="@string/signup" />
 </navigation>

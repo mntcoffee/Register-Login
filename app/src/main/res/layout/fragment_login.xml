@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.stakasaki.coffeeorder.model.RegisterLoginViewModel"/>
+            type="com.example.stakasaki.coffeeorder.registerlogin.RegisterLoginViewModel"/>
 
         <variable
             name="loginFragment"
