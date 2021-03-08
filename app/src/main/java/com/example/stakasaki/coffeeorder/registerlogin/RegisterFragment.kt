@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.stakasaki.coffeeorder.databinding.FragmentRegisterBinding
 
 
@@ -33,12 +34,20 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // bind variables in its layout
         binding?.apply {
             viewModel = sharedViewModel
             registerFragment = this@RegisterFragment
         }
     }
 
+    // prevent from memory leak
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
+
+    // a helper method for register button
     fun onClickRegisterButton() {
         Log.d(TAG, "clicked a register button")
         /**
@@ -47,11 +56,10 @@ class RegisterFragment : Fragment() {
          */
     }
 
+    // a helper method for going back to login fragment
     fun goBackToLogin() {
         Log.d(TAG, "clicked a text view to set up new account")
-        /**
-         * TODO
-         */
+        findNavController().navigateUp()
     }
 
 }

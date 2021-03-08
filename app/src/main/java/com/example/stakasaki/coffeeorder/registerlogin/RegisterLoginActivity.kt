@@ -18,11 +18,16 @@ class RegisterLoginActivity : AppCompatActivity(R.layout.activity_register_login
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // フラグメントごとにタイトルを設定する
+        // set a title of actionbar each fragment
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment_register_login) as NavHostFragment
         navController = navHostFragment.navController
 
         setupActionBarWithNavController(navController)
+    }
+
+    // upButton
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }

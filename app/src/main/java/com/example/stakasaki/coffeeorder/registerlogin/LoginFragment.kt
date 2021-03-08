@@ -37,14 +37,19 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // レイアウト側の変数との紐づけ
+        // bind variables in its layout
         binding?.apply {
             viewModel = sharedViewModel
             loginFragment = this@LoginFragment
         }
     }
 
-    // login ボタンのヘルパーメソッド
+    // prevent from memory leak
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
+    // a helper method for login button
     fun onClickLoginButton() {
         Log.d(TAG, "clicked a login button")
         /**
@@ -54,10 +59,10 @@ class LoginFragment : Fragment() {
          */
     }
 
-    // setup画面への遷移を行うヘルパーメソッド
+    // a helper method for setup
     fun goToSetup() {
         Log.d(TAG, "clicked a text view to set up new account")
-        // setup画面に遷移する
+        // go to register fragment
         findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
     }
     
