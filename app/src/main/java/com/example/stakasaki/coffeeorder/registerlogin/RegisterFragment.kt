@@ -50,6 +50,13 @@ class RegisterFragment : Fragment() {
     // a helper method for register button
     fun onClickRegisterButton() {
         Log.d(TAG, "clicked a register button")
+        activity?.let { sharedViewModel.performRegister(
+            it,
+            binding?.mailInputTextRegister?.text.toString(),
+            binding?.passwordInputTextRegister?.text.toString(),
+            binding?.usernameInputTextRegister?.text.toString())
+        }
+        
         /**
          * TODO
          *
