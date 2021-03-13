@@ -56,11 +56,6 @@ class RegisterFragment : Fragment() {
             binding?.passwordInputTextRegister?.text.toString(),
             binding?.usernameInputTextRegister?.text.toString())
         }
-        
-        /**
-         * TODO
-         *
-         */
     }
 
     // a helper method for going back to login fragment

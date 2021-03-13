@@ -52,11 +52,7 @@ class LoginFragment : Fragment() {
     // a helper method for login button
     fun onClickLoginButton() {
         Log.d(TAG, "clicked a login button")
-        /**
-         * TODO
-         * login check method implemented in RegisterLoginViewModel
-         * if(user is ok) -> main activity
-         */
+        
     }
 
     // a helper method for setup

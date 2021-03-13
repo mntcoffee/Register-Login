@@ -5,7 +5,7 @@ import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
-import com.example.stakasaki.coffeeorder.MainActivity
+import com.example.stakasaki.coffeeorder.home.MainActivity
 import com.example.stakasaki.coffeeorder.model.User
 import com.example.stakasaki.coffeeorder.registerlogin.RegisterFragment.Companion.TAG
 import com.google.firebase.auth.FirebaseAuth
