@@ -52,7 +52,10 @@ class LoginFragment : Fragment() {
     // a helper method for login button
     fun onClickLoginButton() {
         Log.d(TAG, "clicked a login button")
-        
+        activity?.let { sharedViewModel.performLogin(
+            it,
+            binding?.mailInputTextLogin?.text.toString(),
+            binding?.passwordInputTextLogin?.text.toString()) }
     }
 
     // a helper method for setup

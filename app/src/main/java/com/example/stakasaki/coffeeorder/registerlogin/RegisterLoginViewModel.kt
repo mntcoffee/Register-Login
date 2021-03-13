@@ -18,10 +18,11 @@ class RegisterLoginViewModel: ViewModel() {
     private lateinit var username: String
 
     // a call back method when register button is tapped
-    fun performRegister(_context: Context,
-                        email: String,
-                        password: String,
-                        _username: String) {
+    fun performRegister(
+        _context: Context,
+        email: String,
+        password: String,
+        _username: String) {
 
         context = _context
         username = _username
@@ -49,7 +50,7 @@ class RegisterLoginViewModel: ViewModel() {
                 .addOnFailureListener {
                     Log.d(TAG, "Failed to create user: ${it.message}")
                     Toast.makeText(context,
-                            "Failed to create ussr: ${it.message}",
+                            "Failed to create ussr:/n${it.message}",
                             Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -75,6 +76,37 @@ class RegisterLoginViewModel: ViewModel() {
                 .addOnFailureListener {
                     Log.d("RegisterActivity", "Failed to set value to database: ${it.message}")
                 }
+    }
+
+    fun performLogin(
+        _context: Context,
+        email: String,
+        password: String
+    ) {
+        context = _context
+
+        if(email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(context,
+                    "Please input both email and password",
+                    Toast.LENGTH_SHORT
+            ).show()
+            return
+        }
+        Log.d("Login", "Attempt login with email/pw: $email/***")
+
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if(!it.isSuccessful) return@addOnCompleteListener
+                Log.d("Login", "Successfully login with uid: ${it.result!!.user!!.uid}")
+
+                val intent = Intent(context, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            }
+            .addOnFailureListener {
+                Log.d("Login", "Failed to login: ${it.message}")
+                Toast.makeText(context, "Failed to login:\n${it.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
 }

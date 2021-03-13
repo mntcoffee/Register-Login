@@ -15,7 +15,7 @@ import com.google.firebase.database.ValueEventListener
 class HomeViewModel : ViewModel() {
 
     companion object {
-        val TAG = "Home"
+        const val TAG = "Home"
     }
 
     fun fetchCurrentUser() {
