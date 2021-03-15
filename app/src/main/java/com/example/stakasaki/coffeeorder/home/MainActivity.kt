@@ -2,6 +2,7 @@ package com.example.stakasaki.coffeeorder.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -56,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item?.itemId) {
-            R.id.nav_logout -> {
+            R.id.action_logout -> {
                 logout()
             }
         }
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun logout() {
+        Log.d("Main", "attempt to logout")
         FirebaseAuth.getInstance().signOut()
         val intent = Intent(this, RegisterLoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
