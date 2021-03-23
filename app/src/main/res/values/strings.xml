@@ -31,5 +31,9 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="logout">Logout</string>
+    <string name="select_a_menu">Select a menu</string>
+    <string name="coffee_mornig">coffee(mornig)</string>
+    <string name="coffee_1_cup">Coffee(1 cup)</string>
+    <string name="coffee_with_dessert">coffee(with dessert)</string>
 
 </resources>
