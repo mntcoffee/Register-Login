@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.stakasaki.coffeeorder.R
 import com.example.stakasaki.coffeeorder.databinding.FragmentHomeBinding
 import com.example.stakasaki.coffeeorder.model.User
 
@@ -16,6 +18,7 @@ class HomeFragment : Fragment() {
     }
     private var binding: FragmentHomeBinding? = null
     private val homeViewModel: HomeViewModel by activityViewModels()
+    //private val orderViewModel: OrderViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,14 @@ class HomeFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    fun orderCoffee(optionNumber: Int) {
+        when(optionNumber) {
+            0 -> findNavController().navigate(R.id.action_homeFragment_to_coffeeFragment)
+            1 -> findNavController().navigate(R.id.action_homeFragment_to_dessertFragment)
+            else -> findNavController().navigate(R.id.action_homeFragment_to_morningFragment)
+        }
     }
     
 }

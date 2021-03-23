@@ -47,7 +47,8 @@
             android:text="@string/coffee_1_cup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_menu_textview_home" />
+            app:layout_constraintTop_toBottomOf="@+id/select_menu_textview_home"
+            android:onClick="@{() -> homeFragment.orderCoffee(0)}"/>
 
         <Button
             android:id="@+id/coffee_dessert_button_home"
@@ -57,7 +58,8 @@
             android:text="@string/coffee_with_dessert"
             app:layout_constraintEnd_toEndOf="@+id/coffee_1cup_button_home"
             app:layout_constraintStart_toStartOf="@+id/coffee_1cup_button_home"
-            app:layout_constraintTop_toBottomOf="@+id/coffee_1cup_button_home" />
+            app:layout_constraintTop_toBottomOf="@+id/coffee_1cup_button_home"
+            android:onClick="@{() -> homeFragment.orderCoffee(1)}"/>
 
         <Button
             android:id="@+id/coffee_mornig_button_home"
@@ -67,6 +69,7 @@
             android:text="@string/coffee_mornig"
             app:layout_constraintEnd_toEndOf="@id/coffee_dessert_button_home"
             app:layout_constraintStart_toStartOf="@id/coffee_dessert_button_home"
-            app:layout_constraintTop_toBottomOf="@id/coffee_dessert_button_home" />
+            app:layout_constraintTop_toBottomOf="@id/coffee_dessert_button_home"
+            android:onClick="@{() -> homeFragment.orderCoffee(2)}"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
